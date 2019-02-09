@@ -1,0 +1,99 @@
+package com.grid;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Orang
+{
+	@Parameters("browser")
+	@Test
+	public void logintest(String browser) throws IOException
+	{
+		System.out.println("the name of the browser : "+browser);
+		DesiredCapabilities cap =null;
+		if(browser.equalsIgnoreCase("firefox")) {
+			cap=DesiredCapabilities.firefox();
+			cap.setBrowserName("firefox");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+		else if(browser.equalsIgnoreCase("chrome")) {
+			cap=DesiredCapabilities.chrome();
+			cap.setBrowserName("chrome");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+	
+		RemoteWebDriver driver_hrm = new RemoteWebDriver(new URL("http://192.168.10.111:4444/wd/hub"),cap);
+		
+		
+		
+		String url = "http://localhost/orangehrm/orangehrm-2.6/login.php";
+		
+	
+	
+			
+			driver_hrm.get(url);
+			driver_hrm.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver_hrm.manage().window().maximize();
+			
+		
+		
+			FileInputStream file = new FileInputStream("C:\\Users\\ARIVAZHAGAN\\Desktop\\selemium files\\workspace\\Automation\\src\\com\\OrangHRM_Input_Data_Validation\\InpuValidation_EmployeeValidationData.xlsx");
+			
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			
+			XSSFSheet sheet = workbook.getSheet("login_data");
+			
+			int rowcount=sheet.getLastRowNum();
+			
+			for (int i=1;i<=rowcount;i++)
+			{
+				Row r =sheet.getRow(i);
+				//name="txtUserName"
+				driver_hrm.findElement(By.name("txtUserName")).sendKeys(r.getCell(0).getStringCellValue());
+				
+				
+				//txtPassword
+				driver_hrm.findElement(By.name("txtPassword")).sendKeys(r.getCell(1).getStringCellValue());
+				//Submit
+				driver_hrm.findElement(By.name("Submit")).click();
+				
+				String expected_Title = "OrangeHRM";
+				System.out.println("The Expected Title is : "+expected_Title);
+				String actual_title = driver_hrm.getTitle();
+				System.out.println("The Actual Title is : "+actual_title);
+				
+				if(actual_title.equals(expected_Title))
+				{
+					System.out.println("login successfull --pass");
+					r.createCell(2).setCellValue("login successfull --pass");
+					r.createCell(3).setCellValue("test_Pass");
+				}
+				else
+				{
+					System.out.println("login unsuccessfull --fail");
+					r.createCell(2).setCellValue("login unsuccessfull --fail");
+					r.createCell(3).setCellValue("test_Pass");
+					
+				}
+				
+				FileOutputStream file2 =new FileOutputStream("C:\\Users\\ARIVAZHAGAN\\Desktop\\selemium files\\workspace\\Automation\\src\\com\\OrangHRM_Test_Case_Validation_Output\\OrangHRM_Test_Case_Validation_output_login1.xlsx");
+				workbook.write(file2);
+				driver_hrm.navigate().back();
+			}	
+			driver_hrm.findElement(By.name("txtUserName")).clear();
+			}
+			
+}

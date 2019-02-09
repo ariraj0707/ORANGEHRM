@@ -1,0 +1,8 @@
+Feature : OrangeHRMAPP
+
+Scenario : loginTest
+
+Given : open Firefox Browser and Enter url
+When : user Enter Valid UserName and Password and Click Login
+Then : user Should be able to Succesfully login
+Then : close the Browser

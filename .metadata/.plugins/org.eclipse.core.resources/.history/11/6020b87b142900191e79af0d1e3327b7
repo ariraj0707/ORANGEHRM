@@ -1,0 +1,8 @@
+<suite name ="oranghrm">
+<test name = "on firefox">
+<parameter name ="Browser" valus="firefox"/>
+<classes>
+<class name = ""/>
+</classes>
+</test>
+</suite>

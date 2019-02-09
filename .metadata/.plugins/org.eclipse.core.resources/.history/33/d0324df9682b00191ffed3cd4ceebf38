@@ -1,0 +1,26 @@
+package faceBookFinalScripts;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+
+
+public class PomFaceBook_TestCases 
+{
+
+	WebDriver driver =null;
+	String url="http://www.newtours.demoaut.com/";
+	
+@Test
+public void setUp() throws IOException
+{
+
+	PomFacebookHome face = PageFactory.initElements(driver, PomFacebookHome.class);
+	face.takeSnapShot(driver, "C:\\Users\\ARIVAZHAGAN\\Desktop\\maven\\Training\\screenShots\first.png");
+}
+}

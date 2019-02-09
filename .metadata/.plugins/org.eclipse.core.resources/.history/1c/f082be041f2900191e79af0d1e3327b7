@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="oranghrms" parallel="tests">
+<test name="loginFunctionality">
+<parameters name ="browser" valus="firefox"/>
+		<classes>
+	<class name="com.grid.Orang"/>
+	</classes>
+</test>
+
+<test name ="OrangeHRM">
+<parameter name ="browser" value="chrome"/>
+<classes>
+	<class name="com.grid.Orang"/>
+	</classes>
+
+</test>
+
+</suite>

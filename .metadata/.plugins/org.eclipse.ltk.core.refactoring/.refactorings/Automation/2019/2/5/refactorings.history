@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;pom.NewTours&apos;&#x0D;&#x0A;- Original project: &apos;Automation&apos;&#x0D;&#x0A;- Destination element: &apos;pom.NewTours&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     library&#x0D;&#x0A;     jar files" description="Copy folders" destination="=pom.NewTours" element1="library" element2="jar files" files="0" flags="589830" folders="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1548999335449" units="0" version="1.0"/>
+</session>

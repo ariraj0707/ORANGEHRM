@@ -1,0 +1,17 @@
+package com.StepDefenition;
+
+
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features="C:\\Users\\ARIVAZHAGAN\\Desktop\\selemium files\\workspace\\Cucumber\\CucuFrame")     
+public class TestRunner 
+{
+
+}

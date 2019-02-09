@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Newtours" parallel="tests">
+<test name="loginFunctionality">
+		<classes>
+	<class name="com.getIntValue_FromExcel.NewToursRegistration_Validation"/>
+	</classes>
+</test>
+
+<test name ="OrangeHRM">
+<classes>
+	<class name="com.OrangHRM_Test_Case_Validation.Test_Case_v1"/>
+	</classes>
+
+</test>
+
+</suite>

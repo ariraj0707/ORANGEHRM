@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name = "NewTours_POM">
+	<test name ="Page Validation">
+	<classes>
+	<class name="pom.NewTours.NewToursHomePageTest"/>
+	</classes>
+	
+	</test>
+
+
+</suite>

@@ -1,0 +1,18 @@
+package faceBookFinalScripts;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import Framework.PomFacebookHome;
+
+public class PomFaceBook_TestCases 
+{
+
+
+@Test
+public void setUp()
+{
+	PomFacebookHome face = new PomFacebookHome();
+	face.launchChromeBrowser();
+}
+}

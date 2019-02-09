@@ -1,0 +1,27 @@
+package faceBookFinalScripts;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+public class PomFacebookHome
+{
+
+	public static void takeSnapShot(WebDriver webdriver,String filewithPath) throws IOException
+	{
+		TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+		
+		File scrFile = scrShot.getScreenshotAs(OutputType.FILE);
+		
+		File DestFile= new File(filewithPath);
+		
+		FileUtils.copyFile(scrFile, DestFile);
+	}
+	
+	
+	
+}

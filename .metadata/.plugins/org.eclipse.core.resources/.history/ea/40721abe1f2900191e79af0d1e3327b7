@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="oranghrms" parallel="tests">
+<test name="loginFunctionality">
+<parameters name ="browser" valus="firefox"/>
+	<packages>
+	<package name="com.ora"/>
+	</packages>
+</test>
+
+<test name ="OrangeHRM">
+<parameter name ="browser" value="chrome"/>
+<packages>
+	<package name="com.ora"/>
+	</packages>
+
+</test>
+
+</suite>

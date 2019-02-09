@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Newtours]" parallel="tests">
+  <test thread-count="5" name="OrangeHRM(failed)" parallel="tests">
+    <classes>
+      <class name="com.OrangHRM_Test_Case_Validation.Test_Case_v1">
+        <methods>
+          <include name="setUp"/>
+          <include name="logIn"/>
+          <include name="tearDown"/>
+          <include name="addEmployee"/>
+        </methods>
+      </class> <!-- com.OrangHRM_Test_Case_Validation.Test_Case_v1 -->
+    </classes>
+  </test> <!-- OrangeHRM(failed) -->
+</suite> <!-- Failed suite [Newtours] -->
